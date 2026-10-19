@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>体制内生存指南 · 卷五 风险账</title><style>
+:root{--bg:#FAF9F6;--paper:#FFFFFF;--ink:#1F2421;--muted:#6F7671;--line:#E4E0D8;--line-soft:#EFEBE3;
+--primary:#2F5D50;--primary-soft:#E8EFEC;--amber:#A9761B;--amber-soft:#FBF2E2;--red:#A63D40;--red-soft:#F9ECEC;
+--serif:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+--sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.sb{position:fixed;left:0;top:0;width:286px;height:100vh;overflow-y:auto;background:#F4F2EC;border-right:1px solid var(--line);padding:30px 18px 80px;font-family:var(--sans);z-index:10}
+.sb::-webkit-scrollbar{width:6px}
+.sb::-webkit-scrollbar-thumb{background:#D8D4C9;border-radius:3px}
+.sb-top{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.sb-title{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.sb-meta{font-size:11.5px;color:var(--muted);margin-top:4px}
+.sb-vol{font-size:11.5px;font-weight:600;color:var(--primary);letter-spacing:.08em;margin:20px 0 5px;padding:0 8px}
+.sb-link{display:block;font-size:12.5px;color:#4A504D;text-decoration:none;padding:5px 8px;border-radius:4px;line-height:1.45;margin-bottom:1px;transition:background .12s,color .12s}
+.sb-link:hover{background:#E8EFEC;color:var(--primary)}
+.sb-link.active{background:var(--primary);color:#fff;font-weight:500}
+.sb-toggle{display:none;position:fixed;left:14px;top:14px;z-index:20;background:var(--primary);color:#fff;border:none;border-radius:6px;padding:8px 14px;font-family:var(--sans);font-size:13px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.main{margin-left:286px}
+.wrap{max-width:740px;margin:0 auto;padding:70px 44px 140px}
+.book-head{padding:30px 0 44px;border-bottom:2px solid var(--primary);margin-bottom:12px}
+.kicker{font-family:var(--sans);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:20px}
+.book-head h1{font-family:var(--sans);font-size:38px;font-weight:600;line-height:1.2;letter-spacing:-.03em;margin-bottom:16px}
+.book-head .sub{font-size:18px;color:#3D4441;line-height:1.7;margin-bottom:10px}
+.book-head .meta{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:22px}
+.toc{margin:40px 0 70px;padding:0;list-style:none;font-family:var(--sans)}
+.toc-vol{display:flex;align-items:baseline;gap:12px;padding:15px 0 6px;border-bottom:1px solid var(--line)}
+.tv{font-size:13px;color:var(--primary);font-weight:500;min-width:34px}
+.tn{font-size:16.5px;font-weight:600;color:var(--ink)}
+.tsub{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.toc-secs ul{list-style:none;padding:8px 0 14px 46px}
+.toc-secs li{padding:4px 0}
+.toc-secs a{color:#3D4441;text-decoration:none;display:flex;gap:12px;align-items:baseline;font-size:14px}
+.toc-secs a:hover{color:var(--primary)}
+.toc-secs a b{color:var(--primary);font-weight:400;font-size:12.5px;min-width:30px}
+.cnt{margin-left:auto;font-size:11.5px;color:#A8ACA9}
+.vol-open{padding:60px 0 36px;margin-top:56px;border-top:3px solid var(--primary);scroll-margin-top:20px}
+.vol-no{font-family:var(--sans);font-size:13px;letter-spacing:.3em;color:var(--primary);margin-bottom:12px}
+.vol-open h1{font-family:var(--sans);font-size:48px;font-weight:600;letter-spacing:-.04em;line-height:1.1;margin-bottom:10px}
+.vol-sub{font-family:var(--sans);font-size:17px;color:var(--muted);margin-bottom:22px}
+.vol-lead{font-size:16.5px;color:#3D4441;text-align:justify;max-width:620px}
+.chapter{padding-top:20px;margin-bottom:50px}
+.chap-title{font-family:var(--sans);font-size:22px;font-weight:600;color:var(--primary);line-height:1.4;margin:30px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line);letter-spacing:-.01em;scroll-margin-top:20px}
+.chap-no{font-size:12px;color:var(--muted);letter-spacing:.1em;margin-right:12px;font-weight:400;vertical-align:2px}
+.intro{color:#3D4441;font-size:16px;margin-bottom:12px;text-align:justify}
+h3.sec{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);letter-spacing:.04em;margin:40px 0 6px;padding:10px 0 8px;border-bottom:1px dashed var(--line)}
+.item{background:var(--paper);border:1px solid var(--line-soft);border-left:2px solid var(--primary);border-radius:3px;padding:24px 26px 22px;margin:20px 0;scroll-margin-top:20px}
+.ih{display:flex;align-items:baseline;gap:12px;margin-bottom:11px}
+.no{font-family:var(--sans);font-size:11.5px;color:var(--muted);letter-spacing:.04em;flex:none;padding-top:3px}
+.ih h4{font-family:var(--sans);font-size:17px;font-weight:600;line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+.tag{font-family:var(--sans);font-size:11px;padding:2px 9px;border-radius:20px;border:1px solid var(--line);color:var(--muted);background:#FBFAF7}
+.r-must{color:#fff;background:var(--primary);border-color:var(--primary)}
+.r-rec{color:var(--primary);background:var(--primary-soft);border-color:#C9DBD4}
+.r-care{color:var(--amber);background:var(--amber-soft);border-color:#EBD9B8}
+.r-no{color:var(--red);background:var(--red-soft);border-color:#EBCFCF}
+.f-lead{margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed var(--line)}
+.f-lead .fv{font-size:17px;line-height:1.75;color:#141917;background:var(--primary-soft);border-left:3px solid var(--primary);padding:11px 15px;border-radius:0 3px 3px 0}
+.field{display:grid;grid-template-columns:4.8em 1fr;gap:12px;margin-bottom:9px}
+.fk{font-family:var(--sans);font-size:11.5px;color:var(--muted);padding-top:4px}
+.fv{font-size:15.5px;line-height:1.8;text-align:justify;color:#2B302D}
+.f-why .fv{background:#F7F8F6;border-left:2px solid #C9DBD4;padding:10px 14px;border-radius:0 3px 3px 0}
+.f-case .fv{background:#FCFAF5;border-left:2px solid #E8DCC2;padding:10px 14px;border-radius:0 3px 3px 0}
+.outro{margin-top:40px}
+.outro p{font-size:15.5px;line-height:1.85;color:#2B302D;margin-bottom:10px;text-align:justify}
+strong{font-weight:600;color:#121715}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:#F1EFE9;padding:1px 5px;border-radius:3px}
+@media(max-width:900px){
+  .sb{transform:translateX(-100%);transition:transform .25s ease;box-shadow:2px 0 16px rgba(0,0,0,.1)}
+  .sb.open{transform:none}
+  .sb-toggle{display:block}
+  .main{margin-left:0}
+  .wrap{padding:64px 20px 100px}
+  .book-head h1{font-size:30px}
+  .vol-open h1{font-size:34px}
+  .chap-title{font-size:19px}
+  .item{padding:19px 17px}
+  .field{grid-template-columns:1fr;gap:2px}
+  .fk{padding-top:0}
+  .tsub{display:none}
+}
+</style></head>
+<body><div class="wrap">
+<p class="kicker">体制内生存指南 · 卷五 · 风险账 · 27 条</p>
+<div class="vol-open" style="border-top:none;padding-top:20px"><p class="vol-no">卷五</p><h1>风险账</h1><p class="vol-sub">清闲是有前提的</p><p class="vol-lead">不碰红线、不背黑锅。碰了红线，前面所有的账都清零；背了黑锅，你连算账的资格都没有。</p></div><section class="chapter" id="c5.1"><h2 class="chap-title"><span class="chap-no">5.1</span>红线：一张让人睡得着觉的地图</h2><p class="intro">前面四卷讲怎么活得舒服。这一卷讲怎么不出事。</p><p class="intro">因为<strong>舒服是有前提的</strong>：不碰红线、不背黑锅。碰了红线，前面所有的账都清零；背了黑锅，你连算账的资格都没有。</p><p class="intro">这一节讲边界在哪。</p><p class="intro">先说清楚：<strong>这一节只写"线在哪"，不写"怎么绕"。</strong> 每一条都对应公开通报里的真实案例，都是别人用前途换来的坐标。</p><article class="item" id="i5.1.1">
+  <div class="ih"><span class="no">5.1.1</span><h4>一顿饭的边界：谁付钱、什么标准、有谁在</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要问清楚。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">饭本身不是问题，"谁付钱"和"为什么吃"才是问题。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">接受宴请前问三句——谁请？为什么请？有没有管理服务对象？答不清就不去。自己单位内部的公务接待，按标准来，超了就是超了。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">纪律管的是"可能影响公正执行公务"的宴请，不是所有饭。管理服务对象请客、下属单位请客、有请托事项的请客，这三类是明确的高危场景。而"标准"是硬杠杠，超标就是超标，没有"差不多"。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">纯私人朋友聚会、AA 制、亲属聚餐，不在此列。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某干部接受管理服务对象宴请，一顿饭消费数千元，事后被党内警告。通报里写的不是"吃了多少钱"，是"接受可能影响公正执行公务的宴请"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲（中央八项规定及实施细则、纪律处分条例均有明确规定）</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条的关键不在"吃"，在"关系"。你跟谁吃，比吃什么重要。</div></div>
+</article><article class="item" id="i5.1.2">
+  <div class="ih"><span class="no">5.1.2</span><h4>礼品那条线：多少钱算数、怎么退、怎么留痕</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要当面拒绝，会尴尬。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">收下再退，和被当场拒收，性质不一样。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">能当场拒就当场拒，说"我们有纪律"。拒不掉的上交组织，并且<strong>留下书面记录</strong>——什么时候、谁送的、什么东西、怎么处理的。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">纪律规定的是"收受可能影响公正执行公务的礼品礼金"。数额是一个维度，"可能影响"是另一个维度。而"收了再退"在很多案例里仍被认定为收受，因为你已经接受了这个行为。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">正常人情往来（红白喜事按当地风俗、价值相当的礼尚往来），不在纪律禁止范围内，但要注意对象和场合。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某干部收受礼金后主动退还，仍被处分。通报里的表述是"收受后又退还，不影响违纪认定"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和 5.2 的"留痕"是配套的：拒收也要留痕。</div></div>
+</article><article class="item" id="i5.1.3">
+  <div class="ih"><span class="no">5.1.3</span><h4>酒驾：这不是纪律问题，是人生问题</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">一顿酒钱，或者一次代驾。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">一次酒驾，可能同时丢掉工作、党籍和自由。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">喝酒不开车，这句话没有例外。开车去的场合，一滴不喝；喝了酒的场合，车放那儿，打车回家。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">醉驾入刑，判了刑就开除公职、开除党籍。而酒驾（未达醉驾标准）也要给予党纪政务处分。这不是"注意一下"能解决的，是一次就到底的线。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。这一条没有任何例外。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某干部酒后驾车被查，血液酒精含量达到醉驾标准，被判处拘役，随后被开除党籍、开除公职。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条是全书最不该讲道理的一条。不讲道理，只讲后果。</div></div>
+</article><article class="item" id="i5.1.4">
+  <div class="ih"><span class="no">5.1.4</span><h4>男女关系：单位里最容易出事、也最说不清的一件事</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要保持距离。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">在单位，任何一段说不清的关系，最后都会被说成最难听的那个版本。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">不与异性下属单独在封闭空间长时间相处；不出差同住一层；不深夜私聊非工作内容；不单独接送。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">纪律对"生活纪律"有明确要求，而单位是熟人社会，任何风吹草动都会被放大。更麻烦的是，即使你清白，解释的成本也极高——而多数人没有能力承担这个成本。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">正常工作接触、公开场合、有第三人在场，不必过度紧张。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某干部因生活作风问题被举报，虽然部分情节未能查实，但仍因"造成不良影响"受到处分。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不是让你疑神疑鬼。是提醒你：在单位，<strong>避嫌本身就是一种能力</strong>。</div></div>
+</article><article class="item" id="i5.1.5">
+  <div class="ih"><span class="no">5.1.5</span><h4>你打的每个字都在留痕：群、朋友圈、私人微信</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要少说话。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">网络不是法外之地，这句话对体制内的人尤其成立。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">不在任何平台发表涉政、涉密、涉单位的言论；不转发未经证实的信息；不在群里评价领导和同事；朋友圈分组。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">政治纪律、组织纪律、工作纪律对言行都有约束。而网络言论是可检索、可截图、可追溯的——它比任何口头表达都更容易成为证据。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某干部在微信群转发不当言论，被给予党内警告处分。通报里写的是"违反政治纪律"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和 3.4 是同一件事，但性质不同：那边讲"别惹麻烦"，这边讲"别违纪"。</div></div>
+</article><article class="item" id="i5.1.6">
+  <div class="ih"><span class="no">5.1.6</span><h4>兼职、副业、讲课费：哪些能干，哪些一碰就是雷</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要放弃一些收入。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">能不能干，看三条——是否经过批准、是否利用职权、是否影响本职。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">写作、出版、讲课、咨询，多数需要报批；不得在管辖范围内的企业兼职；不得领取职务相关的报酬。拿不准的，先问组织，别先干。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">纪律禁止的是"违反有关规定从事营利活动"和"利用职权或职务影响谋取私利"。不是所有副业都禁止，但"未经批准"和"利用影响"这两条，踩一条就够。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">纯稿酬、专利、艺术创作等，按各单位具体规定执行，有的允许有的需报备。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某干部在管辖企业兼职取酬，被给予党内严重警告处分，违纪所得被收缴。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条最容易被误解成"什么都不能干"。实际是"该报批的报批，该回避的回避"。</div></div>
+</article><article class="item" id="i5.1.7">
+  <div class="ih"><span class="no">5.1.7</span><h4>被叫去谈话时：能说什么，不能说什么</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要诚实，也要懂程序。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">如实说明是义务，但不是让你猜着说。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">知道的说知道，不知道的说不知道，记不清的说记不清。不猜测、不推断、不替别人回答。有书面材料就提供材料。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">纪律审查最看重的是态度和真实性。编造、隐瞒、对抗，本身就是独立的违纪行为，而且会加重处理。而"记不清"是可以被接受的——人确实会忘。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某干部在谈话中为掩饰一个小问题编了一个说法，后来被查实，性质从"工作失误"变成"对抗组织审查"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不是法律建议。真遇到这种情况，应当咨询专业律师或按规定申请帮助。</div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>这一节七条，全部指向一句话：<strong>这些线，一次都不能试。</strong></p><p>不是因为试了会被抓，是因为试了之后，你前面所有的账都白算了——你省下的时间、养好的身体、处好的关系，全部清零。</p><p><strong>红线的作用不是限制你，是保护你算过的那些账。</strong></p><p><strong>下一节讲另一半：不碰红线，也别被人当垫背。</strong></p></div></section><section class="chapter" id="c5.2"><h2 class="chap-title"><span class="chap-no">5.2</span>别当那个容器</h2><p class="intro">责任不会消失，它只会找一个容器。</p><p class="intro">这句话是本书最重要的一句。因为体制内所有的"背锅"，本质都是同一个过程：<strong>责任在寻找一个能装下它的人，而你正好离得最近、最没有防御、最说不清。</strong></p><p class="intro">这一节讲怎么不成为那个容器。</p><article class="item" id="i5.2.1">
+  <div class="ih"><span class="no">5.2.1</span><h4>锅不找做错的人，找说不清的人</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要接受一个不太好听的真相。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">追责的本质不是还原真相，是在有限时间里得出一个"说得清"的结论。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">每经手一件事，问自己一句——"如果明天出事，我拿什么证明我做了什么、没做什么？"答不上来，这件事对你就还没结束。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">追责有时间和成本的约束。谁的材料最全、时间线最清，谁就最不像责任人；谁的记录最乱、记忆最模糊，谁就成了那个结论。<strong>举证失败的人，替真正犯错的人背锅。</strong></div></div><div class="field "><span class="fk">失效条件</span><div class="fv">有完整系统留痕的场景（OA 全流程、电子签批、监控覆盖），"说不清"的空间被压缩。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某次数据出错，两个人都有责任。一个能拿出当天的微信记录和修改稿，一个只能说"我记不清了"。最后通报里只有后一个人的名字。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条解释了为什么"老实人"总背锅——不是他们错得多，是他们留得少。</div></div>
+</article><article class="item" id="i5.2.2">
+  <div class="ih"><span class="no">5.2.2</span><h4>口头指示不是命令，是可撤回的意向</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">每次多花一分钟。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">领导嘴上说的，出事时不算数；你记下来发给他确认的，才算。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">口头交办后，回座位发一条消息："X 局，刚才您说的三件事我记一下：一……二……三……，我按这个办，有出入您纠正。"不要求他回"确认"，只要他不否认，这条就是记录。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">口头指示没有痕迹，事后无法举证。这不是领导想赖账，是人的记忆会自我修正——半年后他记得的，和他当时说的，很可能不是一回事。留痕不是防人，是防记忆。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">日常琐事不必如此。判断标准只有一条：这事出错会不会有人被追责。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人按领导口头要求调整了报销科目，事后审计发现问题，领导说"我没让他这么改"。没有记录，他无法自证。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">措辞要平，别写"以免以后说不清"这类带暗示的话。</div></div>
+</article><article class="item" id="i5.2.3">
+  <div class="ih"><span class="no">5.2.3</span><h4>只在四个地方留痕：利益、金钱、工作安排、领导指示</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要判断哪些事值得留。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">留痕不是处处留，是四处留。留错了地方叫"留刺"，漏了这四处叫"裸奔"。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">只在这四类事上留——<strong>利益分配</strong>（评优、奖金、职级）、<strong>金钱往来</strong>（报销、接待、礼品）、<strong>工作安排</strong>（谁干什么、什么时候交）、<strong>领导指示</strong>（尤其口头交办）。其余日常协作，一个字都不必留。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">这四类是追责的高发区，也是唯一能靠文字还原事实的领域。其余地方留痕，传递的信号是"我不信任你"，伤的是关系，换不来安全。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">紧急处置、抢险救灾，先办事后补记录，但补的时候要写"因紧急情况先行处置"。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人只在群里留痕，关键的口头指示一句没记。出事时他拿出三百条群消息，没有一条能证明"这事是领导定的"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条来自实战，比任何理论都管用。</div></div>
+</article><article class="item" id="i5.2.4">
+  <div class="ih"><span class="no">5.2.4</span><h4>出事第一个小时：固定证据，不要解释</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要压住解释的冲动。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">你越急着解释，越像在掩饰。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">四件事——保存原始文件（别改、别删）、导出聊天记录、找到在场的人、写一份当天的时间线（自己留着，不急着交）。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">证据会消失。文件会被覆盖，群消息会被撤回，人的记忆会跟着立场走。而解释会污染证据——你一边说一边改，改过的版本就成了新的嫌疑。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">涉及安全事故、人员伤亡，第一反应是救人、报警、报告。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人出事当天急着解释，把原始表格"整理"了一遍。后来核对时，整理过的版本和系统记录对不上，反而成了"篡改"的嫌疑。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">时间线只写事实，不写评价。"9:20 收到通知""10:05 电话请示 X 局"，就这样。</div></div>
+</article><article class="item" id="i5.2.5">
+  <div class="ih"><span class="no">5.2.5</span><h4>三步止损：还原、划界、给方案</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要咽下委屈，先干活。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">组织最想知道的不是"谁错了"，是"现在怎么办"。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">第一步，书面还原事实；第二步，明确职责边界；第三步，提出补救方案。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">追责是流程，处置也是流程。两个流程同时在跑，谁先占据"处置"的位置，谁就自动退出了"追责"的靶心。能解决问题的人，暂时不会被处理。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">涉及违纪违法，第一步应该是向组织说明情况。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人被追责后到处解释"这不是我的错"，半年没人理他。另一个同样被追责的人，第二天交了整改方案，后来成了整改负责人。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">喊冤解决的是情绪，止损解决的是处境。</div></div>
+</article><article class="item" id="i5.2.6">
+  <div class="ih"><span class="no">5.2.6</span><h4>别在群里认错，也别在群里甩锅</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要忍住不回嘴。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">群是公开法庭，不是沟通工具。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">群里只回事实和动作；涉及责任的话，一律私聊或当面；已被 @ 问责，回"我马上核实，稍后向您汇报"，然后私聊。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">公开认错，等于把责任固定下来；公开甩锅，等于把矛盾公开化。而群消息会被截图、转发、断章取义——你控制不了它的去向。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">确实是你错了，且错误已经公开，那就公开认，但只认自己那部分。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人在群里回"是 X 科给我的数据有问题"，X 科的人截图发给了分管领导，事情从"数据错误"变成"科室不和"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">群里的文字没有语气。你写的是解释，别人读的是推卸。</div></div>
+</article><article class="item" id="i5.2.7">
+  <div class="ih"><span class="no">5.2.7</span><h4>代签是把名字借给别人用，风险全在你</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">可能得罪让你代签的人。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">代签的人承担签字人的责任，享受不到签字人的权力。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">一律不代签。领导不在，就说"等 X 局回来我第一时间送过去"；实在急，走"电话请示 + 事后补签 + 附情况说明"。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">笔迹可以鉴定。代签一旦被认定，轻则违反工作纪律，重则涉嫌伪造。而且代签时你并不掌握签字人掌握的信息，等于闭着眼睛替他担保。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">极少数制度允许的"授权代签"，必须有书面授权，且在授权范围内。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某单位经办人替休假的科长签"审核"，票据出问题后，性质从"把关不严"变成"伪造他人签名"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">别人让你代签，说"我签了也不算数，还是得本人签"——把问题推给制度，不推给人。</div></div>
+</article><article class="item" id="i5.2.8">
+  <div class="ih"><span class="no">5.2.8</span><h4>锅守恒：责任不会消失，只会找下一个容器</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">承认这一点，心里不太舒服。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">责任不会因为没人承认而消失，它只会去找下一个能装下它的人。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">碰到任何可能出问题的事，先问一句"这事最后谁签字"。找不到签字的人，就是没有责任人——也就是所有人都可能被算作责任人。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">组织需要一个答案。追责不是哲学问题，是行政流程：一份通报里必须有"责任人：某某"。这个位置空着，流程就走不完。所以"大家一起负责"在出事时必然坍缩成"找一个人负责"。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">明确规定集体担责、且留有完整会议记录的事项，责任确实分摊。但执行环节仍会落到经办人。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某单位一笔采购出问题，经办、审核、审批三个人都说"当时是大家一起定的"。最后经办人承担主要责任——因为只有他的手，具体落在单据上。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这是本节的第一定律。理解它，后面才有意义。</div></div>
+</article><article class="item" id="i5.2.9">
+  <div class="ih"><span class="no">5.2.9</span><h4>责任黏度 = 你留下的痕迹 ÷ 你掌握的证据</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要养成一个新习惯。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">痕迹越多、证据越少，你越容易被粘住。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">每件事结束前做一次三秒自检——<strong>我留了什么痕迹？我手上有什么证据？</strong> 痕迹多证据少，就补证据；两样都没有，说明这事根本不该你碰。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">痕迹是"你参与过"的证明，证据是"你只参与了这一段"的证明。前者让你进入嫌疑名单，后者让你从名单上下来。多数人只顾着干活，从不检查这两个数。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">纯粹的体力活、无责任的执行性工作，不需要算这个。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人干了三年杂活，什么都会一点。出事时所有人都说"这个他经手过"，他翻遍电脑，找不到一份能证明"这事不归我"的材料。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这个公式不精确，但它能让你每次动手前多问一句"值不值"。</div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>这一节七条，讲的是同一件事：<strong>让责任落在它该落的地方。</strong></p><p>不是推卸，是精确。你扛你该扛的那一段，别扛别人那一段。这不是自私，这是让整个系统还能正常运转的前提。</p><p><strong>下一节讲最凶险的一种情况：你的领导出事了。</strong></p></div></section><section class="chapter" id="c5.3"><h2 class="chap-title"><span class="chap-no">5.3</span>领导出事的时候</h2><p class="intro">单位里最凶险的时刻，不是领导批评你，是<strong>领导被查了</strong>。</p><p class="intro">那一刻，所有人的第一反应都是"我会不会被牵连"，第二反应是"我该怎么表现"。而这两个反应，往往会让人做出最糟的选择。</p><p class="intro">这一节讲怎么在这个时刻保住自己——不落井下石，也不陪葬。</p><article class="item" id="i5.3.1">
+  <div class="ih"><span class="no">5.3.1</span><h4>第一件事是划清工作边界，不是表态</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要冷静，不能慌。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">你跟他是什么关系，用文件说话，不用态度说话。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">把手上的项目过一遍——哪些是他直接交办的、哪些经过他签批、哪些是你独立完成的。列一张表，自己心里有数。不要主动去找组织"汇报思想"，也不要四处打听。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">组织调查看的是事实和证据，不是态度。你越急着表态，越像心里有鬼；你越沉默，反而越安全。而"划清边界"这件事，靠的是材料，不是嘴。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">如果组织明确找你谈话，那就如实说，不要回避。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人在领导被查后到处说"我早就觉得他不对劲"，结果被认定为"政治上不成熟"，反而被调查组重点关注。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条的核心是"不要表演"。这个时刻，所有表演都是负分。</div></div>
+</article><article class="item" id="i5.3.2">
+  <div class="ih"><span class="no">5.3.2</span><h4>你签过字的东西，自己心里要有数</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要提前整理。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">签字是你的，不是领导的。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">把近三年你签过字的文件翻一遍，重点看金额、事项、审批链。有疑问的，把当时的依据材料找出来——谁交办的、为什么这么办、有没有会议记录。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">领导出事，牵连的往往是"经手人"。而经手人的自保，靠的不是"我不知道"，是"我当时依据的是这个"。有依据，就是执行；没依据，就是共谋。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">纯粹的例行签字（如日常报销），且完全符合制度，不必紧张。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人签过一份"情况说明"，当时没细看。事后查出内容不实，他无法说明为什么签。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不是让你怀疑一切。是提醒你：签字之前看一眼，比事后解释一百句管用。</div></div>
+</article><article class="item" id="i5.3.3">
+  <div class="ih"><span class="no">5.3.3</span><h4>别替任何人兜底——兜底的人通常自己先进去</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">可能被说"不够意思"。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">你兜的这个底，不会有人记得。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">有人让你"帮忙担一下""就说是我让你办的""这事你别提"，一律拒绝。拒绝的话要软，但立场要硬："这个我担不了，我得如实说。"</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">纪律审查中，"包庇""串供""对抗组织审查"都是独立的违纪行为，而且处理更重。你以为在帮人，实际上是在给自己加一条罪。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人替领导隐瞒了一笔账外支出，最后领导被从轻处理，他被从重处理。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条没有商量余地。<strong>任何让你"帮忙瞒一下"的请求，都是在害你。</strong></div></div>
+</article><article class="item" id="i5.3.4">
+  <div class="ih"><span class="no">5.3.4</span><h4>曾经的"心腹"，出事时是最危险的身份</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要接受自己被重新审视。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">你跟得越近，越需要证明自己只是"工作关系"。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">不主动联系、不打听消息、不表达立场。正常工作照做，该汇报的按程序汇报给现在的负责人。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">调查的逻辑是"顺着关系找人"。走得越近的人，越先被排查。而这个时候，任何"我跟他很熟"的表态，都会变成"我需要重点核查"的理由。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">你确实参与了他的违纪行为，那只能如实交代，争取从轻。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人自称是领导的"左膀右臂"，领导出事后，他被第一个谈话，谈了七次。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不是让你背叛。是让你明白：<strong>关系近，不等于要陪着一起沉。</strong></div></div>
+</article><article class="item" id="i5.3.5">
+  <div class="ih"><span class="no">5.3.5</span><h4>主动说和被动查，是两种完全不同的结局</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要主动开口，很难。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">同样一件事，主动说明是"配合"，被动查出是"隐瞒"。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">如果你确实参与过、知情过，趁早向组织说明。说明的时候讲事实、讲时间、讲金额，不推责、不猜测、不评价他人。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">纪律处分条例对"主动交代"有明确的从轻规定。而这个"主动"，必须是在组织掌握之前。等调查组找上门，就不叫主动了。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人抱着"应该查不到我"的侥幸，等了半年。最后被查出时，从轻情节全部丧失。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条是最难的一条，也是最值钱的一条。真到了那一步，早说永远比晚说好。</div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>这一节五条，讲的是一个姿态：<strong>不落井下石，也不陪着一起沉。</strong></p><p>前者是品格，后者是理性。</p><p>领导出事，对你是一次考验——考验的不是忠诚，是分寸。<strong>分寸对了，你还能继续干下去；分寸错了，你会成为这件事的一部分。</strong></p><p><strong>卷五完。下一卷讲最实在的：钱、假、家。</strong></p></div></section><section class="chapter" id="c5.4"><h2 class="chap-title"><span class="chap-no">5.4</span>被举报了怎么办</h2><p class="intro">体制内最让人睡不着的三个字：<strong>有人举报。</strong></p><p class="intro">多数人第一反应是慌，第二反应是猜"是谁"，第三反应是到处解释。这三个反应，全是错的。</p><p class="intro">这一节讲怎么处理这件事——<strong>不慌、不乱、不自己先把自己办倒。</strong></p><article class="item" id="i5.4.1">
+  <div class="ih"><span class="no">5.4.1</span><h4>举报的四种来源，先分清是哪一种</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要冷静分析。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">不同来源的举报，处理方式完全不同。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">先判断——<strong>利益冲突型</strong>（竞争、分房、评优）、<strong>情绪型</strong>（得罪过人、吵过架）、<strong>误解型</strong>（信息不全）、<strong>恶意型</strong>（有人要整你）。四类的应对不一样。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">利益型和情绪型，多数查无实据，走完程序就结束了；误解型需要你提供材料澄清；恶意型往往反复举报，要有长期准备。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">涉及实质问题的举报，无论来源，都要认真对待。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人把一封情绪型举报当成"有人要整我"，四处打听、找人施压，反而把小事闹大。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条的目的是让你先"定性"，别先"反应"。</div></div>
+</article><article class="item" id="i5.4.2">
+  <div class="ih"><span class="no">5.4.2</span><h4>接到通知后的第一件事：整理材料，不是找人</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要坐下来干活。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">能救你的只有材料，不是关系。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">按举报的内容，逐条整理证据——时间、地点、文件、记录、在场的人。做成一份时间线，自己先看清楚。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">组织核查看的是证据链。你找人说情，等于给自己加一条"干扰核查"；你把材料准备好，才是在配合。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人第一时间打电话给所有认识的人"解释一下"，结果被认定为"串通"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和 5.2.4"出事第一个小时固定证据"是同一件事。</div></div>
+</article><article class="item" id="i5.4.3">
+  <div class="ih"><span class="no">5.4.3</span><h4>别自己先慌：多数举报，查完就结束了</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要压住恐惧。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">举报是"线索"，不是"结论"。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">正常上班、正常工作、正常汇报。不主动提这件事，也不刻意回避。有人问起，说"组织在核实，我配合"。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">纪检监查机关对举报有初核程序，多数举报在初核阶段就了结（不属实或达不到立案标准）。你一慌，反而会让周围人觉得"他心里有鬼"。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">如果确实有问题，那要早说，别拖。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人被举报后请了半个月假，回来后全单位都在传"他出事了"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不是让你侥幸。是让你别在没结论的时候先把自己办了。</div></div>
+</article><article class="item" id="i5.4.4">
+  <div class="ih"><span class="no">5.4.4</span><h4>配合核查的边界：如实说，但不猜</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 甲</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要克制。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">知道的说知道，不知道的说不知道，记不清的说记不清。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">不推断、不猜测、不替别人回答、不评价他人。有材料就提供材料。每次谈话后，自己记一份要点（时间、问了什么、你答了什么）。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">编造和隐瞒本身就是违纪。而"记不清"是可以被接受的——人确实会忘。你越是想"说得圆满"，越容易前后矛盾。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人为了"显得清白"，把一件记不清的事说得非常详细，后来被查出细节对不上。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">甲</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和 5.1.7 是同一件事，只是场景更具体。</div></div>
+</article><article class="item" id="i5.4.5">
+  <div class="ih"><span class="no">5.4.5</span><h4>别去猜"是谁举报的"</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要忍住。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">猜错了，你会得罪一个无辜的人；猜对了，你会多一个敌人。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">不打听、不试探、不在同事面前表现"我知道是谁"。真要防，就防所有人——保持距离，规范做事。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">举报渠道是保密的，你几乎不可能查实。而你的猜测一旦传出去，会制造新的矛盾，还会被认定为"打击报复"。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人认定是某个同事举报的，处处针对，后来查明是另一个人，但关系已经毁了。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条是保护你自己，也是保护无辜的人。</div></div>
+</article><article class="item" id="i5.4.6">
+  <div class="ih"><span class="no">5.4.6</span><h4>事过之后，别急着"证明自己"</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要忍一段时间。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">清白不需要证明，需要时间。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">不主动提这件事，不逢人便解释，不在朋友圈发"清者自清"。正常干活，半年后自然淡了。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">你越急着证明，越像在辩解。而单位里的记忆很短——三个月后，大家关心的是新的事。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">涉及名誉的公开造谣，那要正式澄清。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人在群里发了一段长文自证清白，被截图传成了"他心里有气"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和 4.4.6"委屈放一周"是一个道理。</div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>这一节六条，讲的是一件事：<strong>被举报不等于出事。</strong></p><p>先定性，再备料，别慌、别猜、别自证。</p><p><strong>真正能保护你的，是你平时的规范，不是事发后的反应。</strong></p><p><strong>下一节讲副业：什么能干，什么不能干。</strong></p></div></section>
+<div class="vol-open" style="border-top:1px solid var(--line);margin-top:40px;padding-top:30px">
+<p class="vol-lead">—— 卷五 完 ——</p></div>
+</div></body></html>
