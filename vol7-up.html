@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>体制内生存指南 · 卷七 上升账</title><style>
+:root{--bg:#FAF9F6;--paper:#FFFFFF;--ink:#1F2421;--muted:#6F7671;--line:#E4E0D8;--line-soft:#EFEBE3;
+--primary:#2F5D50;--primary-soft:#E8EFEC;--amber:#A9761B;--amber-soft:#FBF2E2;--red:#A63D40;--red-soft:#F9ECEC;
+--serif:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+--sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.sb{position:fixed;left:0;top:0;width:286px;height:100vh;overflow-y:auto;background:#F4F2EC;border-right:1px solid var(--line);padding:30px 18px 80px;font-family:var(--sans);z-index:10}
+.sb::-webkit-scrollbar{width:6px}
+.sb::-webkit-scrollbar-thumb{background:#D8D4C9;border-radius:3px}
+.sb-top{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.sb-title{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.sb-meta{font-size:11.5px;color:var(--muted);margin-top:4px}
+.sb-vol{font-size:11.5px;font-weight:600;color:var(--primary);letter-spacing:.08em;margin:20px 0 5px;padding:0 8px}
+.sb-link{display:block;font-size:12.5px;color:#4A504D;text-decoration:none;padding:5px 8px;border-radius:4px;line-height:1.45;margin-bottom:1px;transition:background .12s,color .12s}
+.sb-link:hover{background:#E8EFEC;color:var(--primary)}
+.sb-link.active{background:var(--primary);color:#fff;font-weight:500}
+.sb-toggle{display:none;position:fixed;left:14px;top:14px;z-index:20;background:var(--primary);color:#fff;border:none;border-radius:6px;padding:8px 14px;font-family:var(--sans);font-size:13px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.main{margin-left:286px}
+.wrap{max-width:740px;margin:0 auto;padding:70px 44px 140px}
+.book-head{padding:30px 0 44px;border-bottom:2px solid var(--primary);margin-bottom:12px}
+.kicker{font-family:var(--sans);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:20px}
+.book-head h1{font-family:var(--sans);font-size:38px;font-weight:600;line-height:1.2;letter-spacing:-.03em;margin-bottom:16px}
+.book-head .sub{font-size:18px;color:#3D4441;line-height:1.7;margin-bottom:10px}
+.book-head .meta{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:22px}
+.toc{margin:40px 0 70px;padding:0;list-style:none;font-family:var(--sans)}
+.toc-vol{display:flex;align-items:baseline;gap:12px;padding:15px 0 6px;border-bottom:1px solid var(--line)}
+.tv{font-size:13px;color:var(--primary);font-weight:500;min-width:34px}
+.tn{font-size:16.5px;font-weight:600;color:var(--ink)}
+.tsub{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.toc-secs ul{list-style:none;padding:8px 0 14px 46px}
+.toc-secs li{padding:4px 0}
+.toc-secs a{color:#3D4441;text-decoration:none;display:flex;gap:12px;align-items:baseline;font-size:14px}
+.toc-secs a:hover{color:var(--primary)}
+.toc-secs a b{color:var(--primary);font-weight:400;font-size:12.5px;min-width:30px}
+.cnt{margin-left:auto;font-size:11.5px;color:#A8ACA9}
+.vol-open{padding:60px 0 36px;margin-top:56px;border-top:3px solid var(--primary);scroll-margin-top:20px}
+.vol-no{font-family:var(--sans);font-size:13px;letter-spacing:.3em;color:var(--primary);margin-bottom:12px}
+.vol-open h1{font-family:var(--sans);font-size:48px;font-weight:600;letter-spacing:-.04em;line-height:1.1;margin-bottom:10px}
+.vol-sub{font-family:var(--sans);font-size:17px;color:var(--muted);margin-bottom:22px}
+.vol-lead{font-size:16.5px;color:#3D4441;text-align:justify;max-width:620px}
+.chapter{padding-top:20px;margin-bottom:50px}
+.chap-title{font-family:var(--sans);font-size:22px;font-weight:600;color:var(--primary);line-height:1.4;margin:30px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line);letter-spacing:-.01em;scroll-margin-top:20px}
+.chap-no{font-size:12px;color:var(--muted);letter-spacing:.1em;margin-right:12px;font-weight:400;vertical-align:2px}
+.intro{color:#3D4441;font-size:16px;margin-bottom:12px;text-align:justify}
+h3.sec{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);letter-spacing:.04em;margin:40px 0 6px;padding:10px 0 8px;border-bottom:1px dashed var(--line)}
+.item{background:var(--paper);border:1px solid var(--line-soft);border-left:2px solid var(--primary);border-radius:3px;padding:24px 26px 22px;margin:20px 0;scroll-margin-top:20px}
+.ih{display:flex;align-items:baseline;gap:12px;margin-bottom:11px}
+.no{font-family:var(--sans);font-size:11.5px;color:var(--muted);letter-spacing:.04em;flex:none;padding-top:3px}
+.ih h4{font-family:var(--sans);font-size:17px;font-weight:600;line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+.tag{font-family:var(--sans);font-size:11px;padding:2px 9px;border-radius:20px;border:1px solid var(--line);color:var(--muted);background:#FBFAF7}
+.r-must{color:#fff;background:var(--primary);border-color:var(--primary)}
+.r-rec{color:var(--primary);background:var(--primary-soft);border-color:#C9DBD4}
+.r-care{color:var(--amber);background:var(--amber-soft);border-color:#EBD9B8}
+.r-no{color:var(--red);background:var(--red-soft);border-color:#EBCFCF}
+.f-lead{margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed var(--line)}
+.f-lead .fv{font-size:17px;line-height:1.75;color:#141917;background:var(--primary-soft);border-left:3px solid var(--primary);padding:11px 15px;border-radius:0 3px 3px 0}
+.field{display:grid;grid-template-columns:4.8em 1fr;gap:12px;margin-bottom:9px}
+.fk{font-family:var(--sans);font-size:11.5px;color:var(--muted);padding-top:4px}
+.fv{font-size:15.5px;line-height:1.8;text-align:justify;color:#2B302D}
+.f-why .fv{background:#F7F8F6;border-left:2px solid #C9DBD4;padding:10px 14px;border-radius:0 3px 3px 0}
+.f-case .fv{background:#FCFAF5;border-left:2px solid #E8DCC2;padding:10px 14px;border-radius:0 3px 3px 0}
+.outro{margin-top:40px}
+.outro p{font-size:15.5px;line-height:1.85;color:#2B302D;margin-bottom:10px;text-align:justify}
+strong{font-weight:600;color:#121715}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:#F1EFE9;padding:1px 5px;border-radius:3px}
+@media(max-width:900px){
+  .sb{transform:translateX(-100%);transition:transform .25s ease;box-shadow:2px 0 16px rgba(0,0,0,.1)}
+  .sb.open{transform:none}
+  .sb-toggle{display:block}
+  .main{margin-left:0}
+  .wrap{padding:64px 20px 100px}
+  .book-head h1{font-size:30px}
+  .vol-open h1{font-size:34px}
+  .chap-title{font-size:19px}
+  .item{padding:19px 17px}
+  .field{grid-template-columns:1fr;gap:2px}
+  .fk{padding-top:0}
+  .tsub{display:none}
+}
+</style></head>
+<body><div class="wrap">
+<p class="kicker">体制内生存指南 · 卷七 · 上升账 · 20 条</p>
+<div class="vol-open" style="border-top:none;padding-top:20px"><p class="vol-no">卷七</p><h1>上升账</h1><p class="vol-sub">如果你还想再搏一次</p><p class="vol-lead">最后一卷，给还想往上走的人。用的是同一套算法：先算清哪些努力值得，再看懂升迁的真实规则。</p></div><section class="chapter" id="c7.1"><h2 class="chap-title"><span class="chap-no">7.1</span>哪些努力值得</h2><p class="intro">前面六卷都在讲"少消耗"。</p><p class="intro">这一卷反过来，讲"多投入"——但不是所有的投入都值得。</p><p class="intro">体制内最残酷的一个真相是：<strong>很多人不是不努力，是把力气花在了不产生回报的地方。</strong></p><p class="intro">这一节讲怎么分辨。</p><article class="item" id="i7.1.1">
+  <div class="ih"><span class="no">7.1.1</span><h4>值得押的三种努力：能带走的、能积累的、能换轨的</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要放弃一些"看起来很努力"的事。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">判断标准只有一个——离开这个单位，它还在不在。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv"></div></div><div class="field "><span class="fk">能带走的</span><div class="fv">写作、表达、专业能力、证书、人脉（真朋友那种）。</div></div><div class="field "><span class="fk">能积累的</span><div class="fv">资历、项目经验、行业口碑、可查的作品。</div></div><div class="field "><span class="fk">能换轨的</span><div class="fv">学历、职业资格、跨领域的技能。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">体制内的很多努力是"位置绑定的"——你在这个位置上才有价值，位置一换就清零。而上面这三类，跟着你走。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">短期内要争一个具体位置，那该按那个位置的规则努力。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人在单位做了十年"内部协调"，协调能力极强。调走后发现，这个能力离开了具体的人和事，一文不值。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条是全卷的地基：<strong>先分清哪些是你的，哪些是位置的。</strong></div></div>
+</article><article class="item" id="i7.1.2">
+  <div class="ih"><span class="no">7.1.2</span><h4>不值得押的三种：评比、口号、领导的情绪</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要忍住"被认可"的渴望。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">这三样都不可控，且有效期极短。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">评比参加但不执着；口号喊但不信；领导的情绪看但不入心。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">评比是平衡工具，口号是组织语言，情绪是即时反应——它们都不产生积累。你为它们投入的情绪和时间，第二年就归零。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">评比在提拔时确有加分，该重视还得重视。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人为了一个"先进个人"，连续三个月每天加班到十点。拿到奖状那天很开心，第二年发现，除了那张纸，什么都没变。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不是让你消极。是让你把情绪从"不可控的事"上撤回来。</div></div>
+</article><article class="item" id="i7.1.3">
+  <div class="ih"><span class="no">7.1.3</span><h4>写材料这件事：适可而止，别成为"那支笔"</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要放弃"笔杆子"的光环。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">单位需要一支笔，但不需要一个笔杆子当领导。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">能写是优势，但要控制在"能写"而不是"只能写"。主动争取一些"要露脸、要协调"的活，别让自己被固定在电脑前。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">写材料的人往往最了解情况、最辛苦、最被依赖，但也最难提拔——因为领导离不开他。这个位置的价值在"笔"上，不在"位"上。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">政策研究室、办公室等以文辅政的岗位，写材料本身就是上升通道。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人在办公室写了八年材料，全单位都说他"水平高"，但三次提拔都没他，因为"他走了谁写"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条很反常识，但在很多单位是事实。</div></div>
+</article><article class="item" id="i7.1.4">
+  <div class="ih"><span class="no">7.1.4</span><h4>不可替代，是体制内最危险的处境</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要主动培养接手的人。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">你越不可替代，越走不开；越走不开，越上不去。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">把手上的活整理成流程，教会至少一个人。让自己"可替代但难替代"——别人能接，但接得不如你熟。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">提拔的前提是"你走了，这块有人接"。你把自己做成唯一节点，等于把自己钉死在原地。而"可替代"反而给了你自由。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">核心技术岗、涉密岗位，客观上就是不可替代，那要另找路径。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人是科室里唯一会某项业务的人，十年没动过位置。领导说得很直白："你走了，这块就塌了。"</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和 4.3.3 是一对：一个讲"别被消耗"，一个讲"别被钉死"。</div></div>
+</article><article class="item" id="i7.1.5">
+  <div class="ih"><span class="no">7.1.5</span><h4>把活干得漂亮，但别让领导觉得你只能干这个</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要主动争取"不像你"的活。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">标签一旦贴上，就很难撕下来。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">在做好本职的前提下，主动接一两件"跨类型"的事——写材料的去跑一次协调，搞业务的去做一次汇报。让领导看到你的另一面。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">组织对人的认知是"标签化"的：他是写材料的、他是跑腿的、他是搞技术的。标签决定了机会，而机会决定了你能不能突破。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">专业分工极细的单位，跨类型反而不专业，那要深耕。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人被贴上"会务专家"的标签，十年里所有大会都是他办，一次业务岗的机会都没有。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条的关键是"一次"，不用多，让人看见就行。</div></div>
+</article><article class="item" id="i7.1.6">
+  <div class="ih"><span class="no">7.1.6</span><h4>值得押的还有一样：身体</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">每天半小时。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">所有努力的前提，是你还活着、还能干。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">每周三次、每次三十分钟的运动，比任何"职场技巧"都更能延长你的职业生涯。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">体制内是一场长跑，跑赢的人不是跑得快的，是没退赛的。而四十岁以后的竞争力，很大程度取决于身体。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人三十五岁做到科室负责人，三十八岁查出重病，之后所有的规划都作废了。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条放在"努力"这一节，是想说：<strong>身体也是一种投资，而且回报率最高。</strong></div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>这一节六条，讲的是一件事：<strong>努力要挑地方。</strong></p><p>能带走的、能积累的、能换轨的，值得押。评比、口号、领导的情绪，不值得。而身体，是所有努力的地基。</p><p><strong>下一节讲最后一件事：升迁的真实规则。</strong></p></div></section><section class="chapter" id="c7.2"><h2 class="chap-title"><span class="chap-no">7.2</span>升迁的真实规则</h2><p class="intro">最后一节，讲一件很多人一辈子没搞明白的事：<strong>升迁到底是怎么发生的。</strong></p><p class="intro">不是论资排辈，也不是论功行赏。</p><p class="intro">它是一把手用位置换忠诚的一笔交易——你不是在争取一个岗位，你是在争取被纳入某个人的班底。</p><p class="intro">这一节讲清楚三件事：名单在会前怎么形成，一把手拿什么挑人，以及几个普遍的误判。</p><article class="item" id="i7.2.1">
+  <div class="ih"><span class="no">7.2.1</span><h4>常委会是呈现结果的地方，不是产生结果的地方</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要接受"程序"和"结果"是两件事。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">会议只是把已经定好的事念一遍，真正的决定早在会议室外面做完了。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">关心一件事，不要只看它上没上会，要看它上会之前有没有人替你"说话"。会上说什么都是记录，会前说什么才是决定。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">常委会是集体决策的形式载体，功能是确认共识，不是制造共识。共识在小范围沟通里达成，会上只是走完程序。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">重大否决、争议极大的议题，会上确实可能翻盘，因为小范围没谈拢。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人以为会上发言出彩就能推动方案，讲得头头是道。散会后没人接话——因为这事三天前就定了。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">程序是真的，记录是真的，责任是真的。只是"决定"发生在别处。</div></div>
+</article><article class="item" id="i7.2.2">
+  <div class="ih"><span class="no">7.2.2</span><h4>酝酿不是讨论，是交换</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要重新理解这个词。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">酝酿包含试探、还价和互相兜底。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">听到"还在酝酿"，就该知道两件事——方向没定；能影响方向的人正在一个个谈。这时候要做的不是催，是让你的名字出现在那些谈话里。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">干部任免涉及人事、纪律、稳定的交叉，不可能在一次会议上从零开始。必须先在小范围把分歧磨平。会议是结果，酝酿是过程。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">程序性、事务性事项，不需要酝酿。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人在酝酿阶段到处打听"我有没有戏"，问了七八个人。最后所有人都知道他很想上——而"很想上"本身就是减分项。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条最容易被误用。它不是教你钻营，是告诉你别用"等通知"的心态对付一件需要提前三个月布局的事。</div></div>
+</article><article class="item" id="i7.2.3">
+  <div class="ih"><span class="no">7.2.3</span><h4>提拔的本质：搭班底，不是评先进</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要接受"我很优秀"和"我想用你"是两回事。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">领导提拔一个人，是在给自己搭一套可靠的班子。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">把自己从"好员工"切换到"可信的人"。好员工看业绩，可信的人看三件事——听话、好用、不添乱。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">位置是领导手里最硬的资源，给出去换回来的必须是他能调动的力量。聪明但不受控的人，对领导是风险，不是资产。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">纯技术岗位、职称序列，能力权重远高于忠诚权重。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人业务最强、证书最多，但开会经常提不同意见。连续两次都没他，评语是"能力有，就是不太成熟"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">站队是选边，搭班底是被选。你控制不了被不被选，但能控制自己像不像一个"能被用"的人。</div></div>
+</article><article class="item" id="i7.2.4">
+  <div class="ih"><span class="no">7.2.4</span><h4>好用的排序：听话 &gt; 能扛 &gt; 聪明</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 丙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要接受聪明不是优势。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">人事决策里最不值钱的是聪明，最值钱的是可控。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">把自己能被用的场景想清楚——会写、会跑、会协调、会陪，占哪一样？至少占一样，并且让该知道的人知道。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">领导面对的不是"选人才"，是"用资源"。他算的是"给你位置，你能替我解决什么问题"。聪明排在"能不能被指挥"后面。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">业务攻坚型单位，能力可以压倒其他一切。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人在多个场合表现出比领导更懂行，让领导下不来台。后来领导宁可用一个能力平平但"说什么听什么"的人。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">丙（观察性结论，随领导风格波动很大）</div></div><div class="field "><span class="fk">备注</span><div class="fv">不是让你装傻，是别把"显得聪明"当成核心竞争力。</div></div>
+</article><article class="item" id="i7.2.5">
+  <div class="ih"><span class="no">7.2.5</span><h4>到点就提，是最危险的幻想</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要放弃"熬够年头就该我"的确定性。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">人事调整不是按时间表来的，是按空缺、按变动、按风向来的。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">把"我够资历了"换成"机会来的时候我准备好了吗"。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">一次提拔要同时满足：有位置、有人推、风向对、没人反对。四个里三个不在你手里。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">职级并行中按年限自然晋级的部分，确实到点就提。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人按时按点等，眼看排在他后面的人都动了，他还在等。别人劝他找领导谈一次，他说"该是我的跑不了"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条残酷但有用。它至少能让你少生三天气。</div></div>
+</article><article class="item" id="i7.2.6">
+  <div class="ih"><span class="no">7.2.6</span><h4>借调、遴选、挂职，哪些是机会哪些是坑</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 丙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要判断。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">看它给不给你"身份"和"编制"，不给的就是借劳力。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv"></div></div><div class="field "><span class="fk">借调</span><div class="fv">多数是免费劳动力，但如果能留下（有编制空缺），就是唯一绕开考试的通道。</div></div><div class="field "><span class="fk">挂职</span><div class="fv">有明确的挂职期限和岗位，是镀金；没有期限、只干活，是借调。</div></div><div class="field "><span class="fk">遴选</span><div class="fv">面向体制内的公开考试，是相对最公平的换轨通道。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">这三者的共同点是"暂时离开原单位"，区别在于有没有明确的落点。有落点的叫机会，没落点的叫消耗。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人借调三年，活干了、人累垮了，最后因为"没有编制"被打回原单位，原单位的位置也没了。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">丙（各单位差异极大）</div></div><div class="field "><span class="fk">备注</span><div class="fv">接受任何"暂时离开"的安排之前，问一句"什么时候、以什么身份回来"。答不上来，就别去。</div></div>
+</article><article class="item" id="i7.2.7">
+  <div class="ih"><span class="no">7.2.7</span><h4>五人小组：人事权到底在谁手里</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 丙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要承认你的直属领导帮不上太多忙。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">决定你升迁的那几个人，对你的直属领导同样是保密的。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">把直属领导当信息源和推荐人，不要当决策者。他能做的是在合适的场合提你一句，不能做的是拍板。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">干部人事的决策权集中在一个很小的圈子里。以地市一级为例，通常包括党委书记、两位副书记、纪委书记和组织部长，俗称"五人小组"。组织部门出方案，最终取舍在这个小范围里反复酝酿完成。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">科室内部的组长、班组负责人任命，直属领导确实有话语权。层级越低，这话越不成立。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人和直属领导关系极好，以为十拿九稳。调整方案下来，名单里没有他。领导私下说"我推荐了，没通过"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">丙（组织结构公开可查，但具体运作各单位差异很大）</div></div><div class="field "><span class="fk">备注</span><div class="fv">不同级别、不同类型单位差别很大。这一条给的是"量级感"，不是操作手册。</div></div>
+</article><article class="item" id="i7.2.8">
+  <div class="ih"><span class="no">7.2.8</span><h4>竞争上岗：流程是真的，内定也是真的</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 丙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要接受自己参加的是一场"有答案的考试"。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">程序的真实性和结果的决定权，是可以同时存在的。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">该报名报名，该考试考试。别因为知道答案就弃权——弃权等于放弃下一次入场券。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">选拔程序设计出来是为了控制风险和程序完整，不是为了发现人才。当某个岗位需要特定人选时，流程会被用来为这个结论服务。这不等于流程是假的，只等于流程不是决定项。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">面向社会公开的遴选、公招，决定性环节的独立性高得多。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人看透了"都是内定"，拒绝参加竞争上岗。半年后机会来了，他却因为没有连续参加的记录，连报名资格都不够。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">丙</div></div><div class="field "><span class="fk">备注</span><div class="fv">看透和弃权是两件事。前者让你平静，后者让你出局。</div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>这一节六条，讲的是升迁的真相。</p><p>它不是对过去的结算，是对未来的投资。领导投资的是他自己的安全感和执行力，你只是他选中的一支股票。</p><p>明白这一点，你至少能做三件事：提前布局而不是到时抱怨，让自己"可用"而不是只"优秀"，把期待放在有成本的信号上而不是漂亮的话上。</p><p><strong>但也要记住：这一卷是全书最后一卷，也是最短的一卷。</strong></p><p>因为对多数人来说，<strong>前面六卷比这一卷重要得多。</strong></p><p><strong>全书完。</strong></p><p>七卷三十节，讲的其实是一件事：</p><p><strong>单位是拿钱的地方，不是卖命的地方。</strong></p><p>你把八小时给它，把剩下的时间、身体、情绪和家人，留给自己。</p></div></section><section class="chapter" id="c7.3"><h2 class="chap-title"><span class="chap-no">7.3</span>借调、挂职、遴选：哪些是机会，哪些是坑</h2><p class="intro">体制内换轨的三条主要通道：借调、挂职、遴选。</p><p class="intro">它们看起来都是"往上走的机会"，但性质完全不同——<strong>一个是试用，一个是镀金，一个是考试。</strong></p><p class="intro">这一节讲怎么分清。</p><article class="item" id="i7.3.1">
+  <div class="ih"><span class="no">7.3.1</span><h4>借调：免费劳动力陷阱，也是唯一的"留用"通道</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 丙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">可能要白干两三年。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">借调不给你身份，只给你"被看见"的机会。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">接受前问清三件事——借调期限多长？有没有留用的可能？原单位的位置保不保？三个答案含糊，就别去。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">借调的人事关系还在原单位，工资原单位发，干活新单位用。多数借调最后是"用完退回"，但如果新单位有编制空缺且领导认可，就是唯一能绕开考试的通道。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">上级机关"以借代调"的情况，留用概率会高一些。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人借调三年，活干了、人累垮了，最后因为"没有编制"被打回原单位，原单位的位置也没了。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">丙（各单位差异极大）</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条的核心是"问清期限和可能"。</div></div>
+</article><article class="item" id="i7.3.2">
+  <div class="ih"><span class="no">7.3.2</span><h4>挂职：有期限、有岗位、有文件的，才叫挂职</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要离开熟悉的环境。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">挂职是"带着任命去的"，不是"去帮忙的"。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">看有没有正式的挂职文件、明确的职务、确定的期限。三者齐全，是镀金；缺一样，就是借调的变种。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">挂职是干部培养制度的一部分，有文件、有职务、有考核，回来通常有安排。而"没有文件的挂职"，本质上就是借调。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人被"挂职"了两年，没有任命文件，回来时原岗位已经有人了。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条的判断标准很硬：<strong>看文件。</strong></div></div>
+</article><article class="item" id="i7.3.3">
+  <div class="ih"><span class="no">7.3.3</span><h4>遴选：相对最公平的一条路</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要考试。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">遴选是面向体制内的公开考试，比"找人"靠谱得多。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">关注本地组织部门发布的遴选公告，看清报名条件（工作年限、身份、专业）。提前半年准备，笔试考的是政策理论、公文写作、案例分析。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">遴选有明确的程序和分数线，虽然也有"萝卜岗"，但整体透明度高于其他通道。而且它是"换单位"最正当的方式。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">极少数岗位确实为特定人设置，那要提前打听。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人笔试第一，面试被刷，后来才知道那个岗位早就有人了。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条值得投入：<strong>它是普通人最可能走通的路。</strong></div></div>
+</article><article class="item" id="i7.3.4">
+  <div class="ih"><span class="no">7.3.4</span><h4>调动：商调函怎么走，卡在哪一步</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要跑手续。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">调动的关键不是"接收单位要不要"，是"原单位放不放"。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">流程是——接收单位发商调函、原单位同意、组织部门审批、办理调动手续。卡点通常在"原单位不放"和"编制空缺"。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">体制内调动需要"出"和"进"两头都同意。而原单位往往不愿意放走能干的人，这是最常见的卡点。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">上级机关直接下调令的，不在此列。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人接收单位都找好了，原单位一句"我们人手紧"，拖了两年。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条要提前做原单位的工作，别等商调函发出去才发现不放人。</div></div>
+</article><article class="item" id="i7.3.5">
+  <div class="ih"><span class="no">7.3.5</span><h4>跨省调动：最难的一条路</h4></div>
+  <div class="tags"><span class="tag r-opt">○ 可选</span><span class="tag t-rel">可靠 丙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">时间、精力、关系。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">跨省调动涉及两地编制、两地审批，难度是省内的数倍。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">先确认接收地有没有"人才引进"政策（这是跨省最现实的通道），再走商调。没有政策支撑的纯商调，成功率极低。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">跨省调动要经过两地组织部门、编办，任何一环卡住都办不成。而"人才引进"有专门通道，程序简单得多。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">夫妻两地分居、照顾老人等特殊情况，部分地区有照顾政策。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人为跨省调动跑了四年，最后放弃。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">丙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条要有心理准备：<strong>能办成是少数。</strong></div></div>
+</article><article class="item" id="i7.3.6">
+  <div class="ih"><span class="no">7.3.6</span><h4>接受任何"暂时离开"之前，问一句"什么时候、以什么身份回来"</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">可能显得不够积极。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">这句话能替你筛掉八成的坑。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">不管是借调、挂职、还是"先去帮忙一段时间"，都问这一句。对方答得清楚，是机会；答得含糊，是消耗。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">所有的"暂时"都有代价——你的位置、你的关系、你的时间。而组织对"暂时"的定义，往往比你想的长。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">无。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人"先去帮忙三个月"，帮了三年。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条是整卷的收尾：<strong>机会和坑的区别，就在这句话的答案里。</strong></div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>这一节六条，讲的是三条通道的区别：</p><p><strong>借调</strong>是试用，可能留用，也可能白干；<strong>挂职</strong>是镀金，看文件；<strong>遴选</strong>是考试，最公平。</p><p>而所有"暂时离开"的安排，都要先问一句：<strong>什么时候、以什么身份回来。</strong></p><p><strong>全书完。</strong></p></div></section>
+<div class="vol-open" style="border-top:1px solid var(--line);margin-top:40px;padding-top:30px">
+<p class="vol-lead">—— 卷七 完 ——</p></div>
+</div></body></html>
