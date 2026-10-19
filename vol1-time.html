@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>体制内生存指南 · 卷一 时间账</title><style>
+:root{--bg:#FAF9F6;--paper:#FFFFFF;--ink:#1F2421;--muted:#6F7671;--line:#E4E0D8;--line-soft:#EFEBE3;
+--primary:#2F5D50;--primary-soft:#E8EFEC;--amber:#A9761B;--amber-soft:#FBF2E2;--red:#A63D40;--red-soft:#F9ECEC;
+--serif:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+--sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.sb{position:fixed;left:0;top:0;width:286px;height:100vh;overflow-y:auto;background:#F4F2EC;border-right:1px solid var(--line);padding:30px 18px 80px;font-family:var(--sans);z-index:10}
+.sb::-webkit-scrollbar{width:6px}
+.sb::-webkit-scrollbar-thumb{background:#D8D4C9;border-radius:3px}
+.sb-top{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.sb-title{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.sb-meta{font-size:11.5px;color:var(--muted);margin-top:4px}
+.sb-vol{font-size:11.5px;font-weight:600;color:var(--primary);letter-spacing:.08em;margin:20px 0 5px;padding:0 8px}
+.sb-link{display:block;font-size:12.5px;color:#4A504D;text-decoration:none;padding:5px 8px;border-radius:4px;line-height:1.45;margin-bottom:1px;transition:background .12s,color .12s}
+.sb-link:hover{background:#E8EFEC;color:var(--primary)}
+.sb-link.active{background:var(--primary);color:#fff;font-weight:500}
+.sb-toggle{display:none;position:fixed;left:14px;top:14px;z-index:20;background:var(--primary);color:#fff;border:none;border-radius:6px;padding:8px 14px;font-family:var(--sans);font-size:13px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.main{margin-left:286px}
+.wrap{max-width:740px;margin:0 auto;padding:70px 44px 140px}
+.book-head{padding:30px 0 44px;border-bottom:2px solid var(--primary);margin-bottom:12px}
+.kicker{font-family:var(--sans);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:20px}
+.book-head h1{font-family:var(--sans);font-size:38px;font-weight:600;line-height:1.2;letter-spacing:-.03em;margin-bottom:16px}
+.book-head .sub{font-size:18px;color:#3D4441;line-height:1.7;margin-bottom:10px}
+.book-head .meta{font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:22px}
+.toc{margin:40px 0 70px;padding:0;list-style:none;font-family:var(--sans)}
+.toc-vol{display:flex;align-items:baseline;gap:12px;padding:15px 0 6px;border-bottom:1px solid var(--line)}
+.tv{font-size:13px;color:var(--primary);font-weight:500;min-width:34px}
+.tn{font-size:16.5px;font-weight:600;color:var(--ink)}
+.tsub{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.toc-secs ul{list-style:none;padding:8px 0 14px 46px}
+.toc-secs li{padding:4px 0}
+.toc-secs a{color:#3D4441;text-decoration:none;display:flex;gap:12px;align-items:baseline;font-size:14px}
+.toc-secs a:hover{color:var(--primary)}
+.toc-secs a b{color:var(--primary);font-weight:400;font-size:12.5px;min-width:30px}
+.cnt{margin-left:auto;font-size:11.5px;color:#A8ACA9}
+.vol-open{padding:60px 0 36px;margin-top:56px;border-top:3px solid var(--primary);scroll-margin-top:20px}
+.vol-no{font-family:var(--sans);font-size:13px;letter-spacing:.3em;color:var(--primary);margin-bottom:12px}
+.vol-open h1{font-family:var(--sans);font-size:48px;font-weight:600;letter-spacing:-.04em;line-height:1.1;margin-bottom:10px}
+.vol-sub{font-family:var(--sans);font-size:17px;color:var(--muted);margin-bottom:22px}
+.vol-lead{font-size:16.5px;color:#3D4441;text-align:justify;max-width:620px}
+.chapter{padding-top:20px;margin-bottom:50px}
+.chap-title{font-family:var(--sans);font-size:22px;font-weight:600;color:var(--primary);line-height:1.4;margin:30px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line);letter-spacing:-.01em;scroll-margin-top:20px}
+.chap-no{font-size:12px;color:var(--muted);letter-spacing:.1em;margin-right:12px;font-weight:400;vertical-align:2px}
+.intro{color:#3D4441;font-size:16px;margin-bottom:12px;text-align:justify}
+h3.sec{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);letter-spacing:.04em;margin:40px 0 6px;padding:10px 0 8px;border-bottom:1px dashed var(--line)}
+.item{background:var(--paper);border:1px solid var(--line-soft);border-left:2px solid var(--primary);border-radius:3px;padding:24px 26px 22px;margin:20px 0;scroll-margin-top:20px}
+.ih{display:flex;align-items:baseline;gap:12px;margin-bottom:11px}
+.no{font-family:var(--sans);font-size:11.5px;color:var(--muted);letter-spacing:.04em;flex:none;padding-top:3px}
+.ih h4{font-family:var(--sans);font-size:17px;font-weight:600;line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+.tag{font-family:var(--sans);font-size:11px;padding:2px 9px;border-radius:20px;border:1px solid var(--line);color:var(--muted);background:#FBFAF7}
+.r-must{color:#fff;background:var(--primary);border-color:var(--primary)}
+.r-rec{color:var(--primary);background:var(--primary-soft);border-color:#C9DBD4}
+.r-care{color:var(--amber);background:var(--amber-soft);border-color:#EBD9B8}
+.r-no{color:var(--red);background:var(--red-soft);border-color:#EBCFCF}
+.f-lead{margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed var(--line)}
+.f-lead .fv{font-size:17px;line-height:1.75;color:#141917;background:var(--primary-soft);border-left:3px solid var(--primary);padding:11px 15px;border-radius:0 3px 3px 0}
+.field{display:grid;grid-template-columns:4.8em 1fr;gap:12px;margin-bottom:9px}
+.fk{font-family:var(--sans);font-size:11.5px;color:var(--muted);padding-top:4px}
+.fv{font-size:15.5px;line-height:1.8;text-align:justify;color:#2B302D}
+.f-why .fv{background:#F7F8F6;border-left:2px solid #C9DBD4;padding:10px 14px;border-radius:0 3px 3px 0}
+.f-case .fv{background:#FCFAF5;border-left:2px solid #E8DCC2;padding:10px 14px;border-radius:0 3px 3px 0}
+.outro{margin-top:40px}
+.outro p{font-size:15.5px;line-height:1.85;color:#2B302D;margin-bottom:10px;text-align:justify}
+strong{font-weight:600;color:#121715}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:#F1EFE9;padding:1px 5px;border-radius:3px}
+@media(max-width:900px){
+  .sb{transform:translateX(-100%);transition:transform .25s ease;box-shadow:2px 0 16px rgba(0,0,0,.1)}
+  .sb.open{transform:none}
+  .sb-toggle{display:block}
+  .main{margin-left:0}
+  .wrap{padding:64px 20px 100px}
+  .book-head h1{font-size:30px}
+  .vol-open h1{font-size:34px}
+  .chap-title{font-size:19px}
+  .item{padding:19px 17px}
+  .field{grid-template-columns:1fr;gap:2px}
+  .fk{padding-top:0}
+  .tsub{display:none}
+}
+</style></head>
+<body><div class="wrap">
+<p class="kicker">体制内生存指南 · 卷一 · 时间账 · 23 条</p>
+<div class="vol-open" style="border-top:none;padding-top:20px"><p class="vol-no">卷一</p><h1>时间账</h1><p class="vol-sub">八小时里面，有几小时是你的</p><p class="vol-lead">体制内最大的隐性福利不是稳定，是你拥有对时间的部分处置权。多数人把它浪费在了表演忙碌上。</p></div><section class="chapter" id="c1.1"><h2 class="chap-title"><span class="chap-no">1.1</span>八小时里面，有几小时是你的</h2><p class="intro">多数人从来没数过：一天八小时里，真正属于你的有几小时。</p><p class="intro">这一节把它算出来。结论比你想象的多——<strong>接水、上厕所、开会、学习、午休、散步，全都在工资里。</strong></p><article class="item" id="i1.1.1">
+  <div class="ih"><span class="no">1.1.1</span><h4>在单位把尿喝黄</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间少 · 心理低</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">桌上常备一个杯子，仅此而已。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">一天喝够两升水，离开工位就名正言顺。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">桌上放一个看得见的大杯子，早上倒满，上午两杯下午两杯。水喝得多，厕所去得就勤，每次五分钟起步，不犯法、不违纪、不用汇报。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">单位最贵的资源不是工位，是你上厕所那几分钟。久坐的人靠这五分钟救腰，犯困的人靠站起来那一下救命。而且喝水多有第二个好处——它让你在工位上的每一分钟都更清醒，干活的效率反而高。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">窗口岗位、服务岗位、有明确坐班要求的岗位，这条不适用。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">没有翻车案例。这是全书性价比最高的一条，风险接近于零。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">别笑。二十年后还在单位、身体还没垮的人，多数都有自己一套类似的土办法。</div></div>
+</article><article class="item" id="i1.1.2">
+  <div class="ih"><span class="no">1.1.2</span><h4>开会、学习、抄笔记，全部按带薪休息处理</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要装得像在听。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">单位安排的那些"必须到场"的活动，本质是它买你的时间，你的身体归你自己。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">带上自己的笔记本（不是会议发的），想听的部分听，不想听的部分发呆、练字、在心里过一遍周末安排。睡觉可以，别打呼噜。玩手机可以，屏幕压低。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">这些场合对你的评价几乎没有影响——没人会记住你在党会上有没有认真记笔记，但所有人都会记住你为什么总在下午三点打哈欠。既然结果是零，不如把这段时间当成免费的发呆额度。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">有签到、有点名、有领导眼神交流的场合，该演的还得演。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人在学习会上睡得太沉，被点名谈感想。他站起来说了三分钟，居然过了——因为领导自己也困。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不是教你混，是教你别在这些场合"用力过猛"。真正该用力的是下班后的时间。</div></div>
+</article><article class="item" id="i1.1.3">
+  <div class="ih"><span class="no">1.1.3</span><h4>午休是单位发的，不用白不用</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间中 · 心理低</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">需要一点遮挡——一件外套、一个 U 型枕。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">午休那一个小时，是全年无休的免费恢复窗口。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">饭后别立刻趴下，走十分钟再睡。睡二十分钟比睡一小时管用。定个闹钟，醒了过来洗把脸，下午的效率能翻一倍。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">人的注意力在午后有一个自然低谷，这是生理节律，不是懒。用二十分钟把它补回来，比喝两杯咖啡划算，也没有心悸副作用。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">有的单位中午有人来往、没法安静，那就戴耳机听白噪音，也能恢复一半。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人中午不睡，下午三点开会打瞌睡，被记了三年"精神状态不佳"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和"把尿喝黄"是配套的：上午多喝水、中午能睡着、下午不犯困。三件事加起来，是一整套低成本养生法。</div></div>
+</article><h3 class="sec">二、节奏篇</h3><article class="item" id="i1.1.4">
+  <div class="ih"><span class="no">1.1.4</span><h4>工位散步：每小时起身五分钟，不犯法</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要看起来像去办事。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">去接水、去厕所、去别的科室送个文件——每小时离开工位一次。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">设个 hourly 的闹钟，震动，响了就起身。去三趟厕所、两趟茶水间、一趟楼梯间，一天的运动量就够了。下楼绕一圈更好。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">久坐对腰、颈、血管、代谢的伤害，比熬夜更隐蔽也更严重。而它的解法极其便宜——只需要你每小时站起来五分钟。单位给你付工资让你散步，这是全天下最划算的健身卡。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">体力劳动岗位、外勤岗位本来就一直在动，这条不适用。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人十年工龄，腰肌劳损加颈椎曲度变直，一年理疗花的钱够再买十年咖啡。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">最好的搭配是楼梯：一天上下两趟，一年下来心肺功能吊打同办公室所有人。</div></div>
+</article><h3 class="sec">三、分寸篇</h3><article class="item" id="i1.1.5">
+  <div class="ih"><span class="no">1.1.5</span><h4>接水、上厕所、送文件，一天的运动量就够了</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要看起来像去办事。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">每小时离开工位一次，不用去健身房。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">定一个每小时的震动闹钟，响了就起身。去三趟厕所、两趟茶水间、一趟隔壁科室。下楼绕一圈更好，走楼梯不坐电梯。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">久坐对腰、颈、血管、代谢的伤害比熬夜更隐蔽。解法只贵在起身那一下——单位给你付工资让你活动，这是全天下最划算的健身卡。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">窗口岗位、外勤岗位本来就一直在动，这条不适用。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人十年工龄，腰肌劳损加颈椎曲度变直，一年理疗的钱够再买十年咖啡。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和“把尿喝黄”是一套的：水喝够了，厕所上得才勤；厕所上得勤，工位才离得开。</div></div>
+</article><article class="item" id="i1.1.6">
+  <div class="ih"><span class="no">1.1.6</span><h4>摸鱼的三个硬件：屏幕角度、耳机颜色、文件夹名字</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 钱少 · 心理低</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">花几十块钱买一副不起眼的耳机。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">清闲的人不需要演技，需要的是环境设置。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">屏幕侧放三十度，不正面朝向门口；耳机用最普通的黑色，不用显眼的颜色；私人文件夹别起“复习资料”这种名字，起“临时”。摸鱼用的东西收在包里，别摊在桌上。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">人对“同事在偷懒”的判断，七成来自视觉线索而不是实际工作产出。你把这些线索清掉，别人对你的默认印象就是“在忙正事”。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">领导座位在你正背后，这条全部作废。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人屏保全是很明显的视频，耳机是亮粉色，桌面上一个命名为“刑法考试”的文件夹。全科室都知道他今年要考证。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条听起来像小事，但在办公室里，可见度就是一切。</div></div>
+</article></section><section class="chapter" id="c1.2"><h2 class="chap-title"><span class="chap-no">1.2</span>单位的忙，是有周期的</h2><p class="intro">单位的忙不是平均分布的。它像潮水：月底、年底、检查前、领导换届前，涌上来；其余时间是平的。</p><p class="intro">大多数人踩的坑，是在平潮期把力气用光，等浪来了反而没劲了。</p><p class="intro">这一节讲怎么读潮汐表。核心一句话：<strong>你不用一直忙，你只要在对的时间忙。</strong></p><article class="item" id="i1.2.1">
+  <div class="ih"><span class="no">1.2.1</span><h4>月底、年底、检查前才是战场</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要忍住”现在多做点表现一下”的冲动。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">一年十二个月，真正决定别人怎么看你的是那三四周。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">拿一张纸，把去年单位”最紧张”的几周标出来——季度末、年终考核前、上级检查前、民主生活会前。剩下的日子，正常干，别加码。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">体制内的评价节点是集中的。评优、考核、提拔、检查，全挤在固定时段。你的表现只有在这些时点才会被计算，平时干得再多，也只是把素材堆在那里，没人翻。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">服务性岗位、窗口岗位，忙是随人流走的，不按日历。那种岗位要看自己的月度曲线。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人全年紧绷，年底那两周反而累垮了，最后考察谈话时状态极差。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条能替你省下一年里最虚耗的那几个月。</div></div>
+</article><article class="item" id="i1.2.2">
+  <div class="ih"><span class="no">1.2.2</span><h4>领导的急不是你的急</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">可能会被说”不够主动”。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">天塌下来，也先吃完饭。他真的急，会自己来推。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">领导催一件事，先问一句”什么时候要”。他说明天，你就明天给；他说”尽快”，你就问”今天下班前行吗”。有了明确时间，你就不用陪他焦虑。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">领导的急大部分来自上头给他的压力，他需要下属分担情绪。但事情的物理 deadline 只有一个——你真的做到那个点，事不会崩。提前三天做完，收益接近于零；把自己的节奏打乱，代价立刻兑现。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">他真的追到你面前、盯着你干，那就是真急。这时候别讲方法，先动。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人接到任务当天干到凌晨两点，第二天交上去，领导说”这个月底才要”。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">分辨真假急事的标准很简单：看 deadlines 说没说清楚。说不清的，多半不急。</div></div>
+</article><article class="item" id="i1.2.3">
+  <div class="ih"><span class="no">1.2.3</span><h4>慢是一种能力：多数急事，晚一天不会死</h4></div>
+  <div class="tags"><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间少 · 心理中</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要顶住”你怎么还不急”的眼神。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">单位里九成”急事”，放二十四小时会自动降级。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">接到急事，不要立刻进入冲锋状态。先做一件最简单的事——把要求复述一遍，跟对方确认 deadline。然后在纸上写下真实的时间点，按那个点排。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">行政系统有自我纠错能力：真会出人命、真会被通报的事，早就不等你表态、直接压下来了。剩下的”急”，多数是传递过程中的焦虑放大。你跟着急，只是替别人的情绪买单。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">涉及安全、上访、突发舆情、以及你自己牵头的事，不能慢。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人被一句”下午就要”追了一整天，晚饭没吃。晚上九点对方说”不急了，明天上午给我就行”。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条练的不是拖延，是把”别人的急”和”我的急”分开。</div></div>
+</article><article class="item" id="i1.2.4">
+  <div class="ih"><span class="no">1.2.4</span><h4>别做第一个交活的，也别做最后一个</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要忍一会儿，别抢功。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">第一个交的人，设定标准；最后一个交的人，承担风险。中间最好。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">看同组其他人什么时候交。如果大家都周五交，你周四交就是在抬高水位，以后所有人都得这个点交。拖到周五下班前一点交，既不掉队，也不当出头鸟。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">交活的顺序，本质是在团队里设定预期。你交得越早，后面的人越难做，也会被默认为”你可以更快”。这是典型的自设约束被当成硬约束的过程。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">你的活要靠别人的输出才能推进，或者会卡住下游，那就必须早交。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人每次都是第一个交，领导从此把他的 deadline 默认为全组最早。他一年比别人多熬了无数个夜，考核并没有因此好看。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不是教你偷工，是别用自己的余量，去抬高所有人的水位。</div></div>
+</article><article class="item" id="i1.2.5">
+  <div class="ih"><span class="no">1.2.5</span><h4>看起来很忙和真的很忙，是两种活法</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要装，心里有点别扭。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">真正决定你处境的是看起来忙，不是真的很忙。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">走路快半步、手里拿一叠纸、进门先叹气再坐下、桌上摊着文件。这些都是零成本的信号，而且不骗人——你只是把状态外化出来了。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">领导对下属的判断，用的是可见信号，不是真实产出。这不是他昏，是他一天看二十个人，只能靠状态筛选。你看起来很忙，他就不会再多派活；你看上去很闲，就算真有产出，他也觉得你还能再加一件。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">领导只看数字、只看结果的岗位，这条无效。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人全年真忙，因为总闷头干活不吭声，年底被评价”工作量不饱和”。另一个只做了三件事但每次都四处同步的，被评为”挑大梁”。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条听起来很坏。但你换个角度：它只是提醒你，真实产出和可见产出之间，有个必须自己补的 translation 环节。</div></div>
+</article><article class="item" id="i1.2.6">
+  <div class="ih"><span class="no">1.2.6</span><h4>检查前两周冲，其余时间养</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要在该松的时候真的松。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">把一年当成两个季节：检查季和非检查季。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">非检查季，正常干、别出头、别创新，把身体和情绪养着。检查季，把库存的东西补好、把台账捋顺、把亮点整理成材料。其余时间加的班，检查时全用不上。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">上级检查看的是”有没有留痕、有没有制度、有没有整改”，不是”你这个团队平时多拼命”。检查前突击，效率反而是全年最高的——因为目标极度清晰。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">窗口单位、检查常年化的单位，这条要改成”检查前一周冲，其余时间养”。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人提前半年开始准备检查材料，做了八十页台账。检查当天领导拿了三页核心的，剩下的没人翻。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条和 1.2.1 是同一个算法的两种说法：读周期，不要在平潮期透支。</div></div>
+</article><article class="item" id="i1.2.7">
+  <div class="ih"><span class="no">1.2.7</span><h4>加班到二十一点的会，能推就推</h4></div>
+  <div class="tags"><span class="tag r-rec">◎ 建议</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间中 · 心理中 · 人情欠一个</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">需要理由，而且不能用太多次。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">晚上九点还在单位开会，多半是因为白天被浪费了，不是因为这活多重要。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">提前说”今晚家里有事”，比坐到一半再走体面。推不掉就带本书、带个水杯，把自己降到最低功耗，人在场而已。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">夜里开会的信息密度极低，多数时候是领导在表达焦虑。你在场的作用是”在场”，不是”贡献”。而夜里那三小时的损耗，第二天要一整天补，并且没有任何补偿。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">突发应急、抢险、以及明确点名你必须到场的会，没得推。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人一年陪了几十场夜会，身体先垮，后来医生说”你再这么熬，四十岁就要来看我”。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">推夜局的话术：”今天确实有事，我先把 XX 部分准备好，明早第一时间给您。”</div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>这一节所有条目合起来是一句话：<strong>单位的忙是周期性的，你的力气要按周期花，不能按日历花。</strong></p><p>没到这个周期的时候，你把自己养好，就是最大的本分。真正的老油条从不拒绝干活，他们只是拒绝在不需要的时候耗尽自己。</p><p><strong>下一节讲怎么守住已经省下来的时间——活儿干完，人不见。</strong></p></div></section><section class="chapter" id="c1.3"><h2 class="chap-title"><span class="chap-no">1.3</span>活儿干完，人不见</h2><p class="intro">时间算出来了，还得会守住。</p><p class="intro">老油条和混子的区别只有一句话：<strong>老油条把分内事干完了再消失，混子是活没干人就消失。</strong></p><article class="item" id="i1.3.1">
+  <div class="ih"><span class="no">1.3.1</span><h4>摸鱼的前提是把分内事干完</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间中 · 心理低</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">分内事还是要干的。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">活儿干完，人不见——这才是老油条。活儿没干，人不见——那是混子。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">每天上班第一件事，把今天必须交的列三行，干完再休息。这三行越短，你的自由度越大。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">单位对清闲的容忍度，取决于"该干的活有没有人接盘"。你把分内事干完了，别人找不到说你的理由；你要是一直欠着，任何一次清闲都会被翻出来当证据。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">活根本干不完的岗位，这条就成了剥削话术。那种情况该谈的是工作量，不是摸鱼。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人活没干完就天天消失，年底考核"基本合格"，理由是"该同志服从性、责任心有待加强"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条是全节的护栏。没有它，前面两节全成了教人偷懒。</div></div>
+</article><article class="item" id="i1.3.2">
+  <div class="ih"><span class="no">1.3.2</span><h4>手上永远留一件"正在做"的事</h4></div>
+  <div class="tags"><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间少 · 心理低</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要会一点话术。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">用来挡新活的最好工具，是另一件还没做完的活。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">被加活时不说"我不干"，说"我手上 A 明天要交，B 这周要给，您看哪个先？"对方一做排序，他就不加了。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">人被加活，多数时候不是因为你看起来闲，是因为对方没看见你的工作量。把两件具体的事摆出来，就把隐藏的工作量变成了他的决策成本。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">对方是你直属领导且事情真的紧急，那就接，别玩话术。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人学会这招之后天天用，一年后被评价"这个人总是推活"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">一年用超过三次就失效，而且会反噬。它救急，不救穷。</div></div>
+</article><article class="item" id="i1.3.3">
+  <div class="ih"><span class="no">1.3.3</span><h4>别在单位吃饭，早退半小时是赚的</h4></div>
+  <div class="tags"><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 钱少 · 时间少 · 心理低 · 人情欠一个</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">少听了几句八卦。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">单位食堂的饭可以吃，但别把下班后的吃饭也安排在单位。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">该下班下班。同事约饭，想去再去，不想去说"今天家里有事"。一周去一次足够，剩下六天是你的。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">单位里的饭局，多数是无效社交的放大器。你去了，听到的是重复的抱怨；没去，损失的是一顿你本来也不想吃的饭。而用这一小时回家吃饭，是全家人都能感觉到的差别。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">刚入职、需要信息、需要同盟时，饭局该去还得去。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人三年几乎每天跟同事吃饭喝酒，胃喝坏了，酒肉朋友一个没剩下。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">判断标准很简单：这顿饭吃完，除了饱，你还得到了什么？答不上来就不去。</div></div>
+</article><article class="item" id="i1.3.4">
+  <div class="ih"><span class="no">1.3.4</span><h4>摸鱼的最高境界：所有人都知道你清闲，但没人能说你没干活</h4></div>
+  <div class="tags"><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间中 · 心理低</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要保持一个"靠谱"的名声。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">清闲是结果，不是态度。别人尊重的是把事办完的人，不是把班加满的人。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">交活的时候多说一句过程（"这个事跑了三趟，对方终于批了"），让工作量被看见；平时少抱怨、少喊累，省下的力气不用在表演上。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">单位对一个人的评价，来自"该干的活他干完了"这一条，而不是"他看起来多忙"。你越不表演忙碌，反而越像心里有数的人。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">遇到只看态度的领导，这条会吃亏。但那种领导也不会因为你加班就真的对你好。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人天天第一个到、最后一个走，年终考评"中等"。理由很直白：没看出他干成了什么。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条是全书最难信、也最值得信的一条。它要求你放弃一种安全感——被看见忙碌的安全感。</div></div>
+</article><article class="item" id="i1.3.5">
+  <div class="ih"><span class="no">1.3.5</span><h4>带薪学习是合法的，学什么是你的自由</h4></div>
+  <div class="tags"><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间中 · 心理低</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要藏好，且别在上班时间做太显眼的事。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">单位时间是成本最低的学习时间。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">把网课下载到本地，摸鱼的时候看；用纸质书比用平板安全；别在工位上看视频；接水、上厕所的路上可以听音频。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">下班后的两小时要跟家庭、身体、社交分。真正只属于你的整块时间，其实是单位里那些没活干的间隙。用它考一个证、读一本书，一年下来差距肉眼可见。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">手里的活没干完就别学；以及别学成“副业做出名”，那是另一回事（见 5.1）。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人上班时间听网课被同事告状，领导谈话只说了一句“能干完活就行”。他后来只敢戴一只耳机。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条的回报是复利的：同样是摸鱼，有人刷三年短视频，有人考出了两个证。</div></div>
+</article></section><section class="chapter" id="c1.4"><h2 class="chap-title"><span class="chap-no">1.4</span>下班之后，才是你的</h2><p class="intro">前面三节讲单位里的时间。这一节讲边界。</p><p class="intro"><strong>下班后你还想着单位的那一分钟，都是白送的利息。</strong></p><article class="item" id="i1.4.1">
+  <div class="ih"><span class="no">1.4.1</span><h4>17:30 之后，单位的事属于另一个宇宙</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间少 · 心理中</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">可能错过几次"表现机会"。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">下班就是下班。天塌下来，也先吃完饭。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">给自己划一条硬线——几点后不看工作群、不接工作电话、不想单位的事。真出了大事，会有人打电话给你；没打电话，说明还不需要你。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">单位的事看起来都急，是因为领导着急。但领导的急是分层的：真正急的事，他会追到你家里；不追的，说明可以等到明天。多数人把"领导着急"直接等同于"我必须现在处理"，白送了无数个晚上。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">值班岗位、应急岗位、以及你自己确实是牵头人的事，这条要让步。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">某人数年如一日地秒回群消息，被默认为"随时能找到的人"。后来他母亲住院，领导第一反应是"那今天的材料怎么办"。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这条的回报不是省下的那几个小时，是你对生活的掌控感。人一旦觉得自己下班了，整个人的状态都不一样。</div></div>
+</article><article class="item" id="i1.4.2">
+  <div class="ih"><span class="no">1.4.2</span><h4>领导没走，你也可以走</h4></div>
+  <div class="tags"><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间少 · 心理中</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">前几次会心虚。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">多数领导留着不走，只是不想那么早回家。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">到点收拾东西，跟领导打个招呼再走。不需要理由，"今天到点了"就是理由。走的时候顺便说一句"还有什么事您随时叫我"。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">领导坐在那里，很多时候是在处理自己的事，或者只是避开家里那一场。他不需要有人陪。你把陪坐当顺从，他把你的陪坐当正常——于是一天就这么耗掉了，而你本来可以用这一小时接孩子、做饭、散步。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">全组在为同一件事冲刺、领导明确说今天都要在，那就别一个人先走。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人连续一个月陪领导加班到九点，领导有一天问："你手上事这么多，怎么还天天待到这么晚？是不是效率有问题？"</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这句话是全书最有名的一条潜规则，但它其实是自设约束——你以为必须，其实没人规定。</div></div>
+</article><article class="item" id="i1.4.3">
+  <div class="ih"><span class="no">1.4.3</span><h4>通勤那两小时是白送的，别拿来生闷气</h4></div>
+  <div class="tags"><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间中 · 心理低</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">路上少刷一会儿手机。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">一年两百多个工作日，每天两小时，是一年多的一个"你的时间"。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">地铁上听东西，开车时听东西，走路时听东西。听课、听书、听什么都行，唯独别在脑子里重播今天谁说了什么。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">通勤是少数"单位不能占用、家人不能占用"的时间，它是你自己的。多数人把它用来生气、刷短视频、或者提前进入家庭的疲惫状态——这三件事都不产生任何东西，还要收你的情绪税。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">开车时需要专注，别听太费脑的；挤成照片的地铁上，能站稳就行。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人在通勤路上把单位的事想了一路，到家门口时已经累得不想说话，老婆问一句他呛一句，一顿好饭变成了冷战。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这条的收益是复利的。一年多出来的时间，够你考一个证、读二十本书，或者只是把精神状态养回来。</div></div>
+</article><article class="item" id="i1.4.4">
+  <div class="ih"><span class="no">1.4.4</span><h4>记住：编制买的是你的八小时，不是你的命</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 无</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">要接受"不出色"。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">所有这一节的条目，练到最后都是这一句。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">每年问自己一次：这一年，我用健康、情绪、陪家人的时间，换回了什么？如果换回来的只有一句"还行"，那明年就该换算法。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">体制给人最大的错觉，是把"熬"当成"积累"。其实多数熬是纯损耗——既没换来位置，也没换来本事，只换来一身的毛病和一屋子的沉默。真正聪明的人，是拿稳定换自由，不是拿命换踏实。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">如果你正在争一个真正想要的位置，那这段时间的额外付出是志愿投资，不算消耗。但前提是"你真的想要"，而不是"大家都想要"。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人四十五岁退了下来，浑身一堆毛病，孩子已经上大学，妻子习惯了一个人吃饭。他说最想重来的，是那十年加过的班。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条不吓唬人，它只是算账。算清楚，你就知道该怎么活了。</div></div>
+</article><article class="item" id="i1.4.5">
+  <div class="ih"><span class="no">1.4.5</span><h4>下班后还想单位的那一分钟，都是白送的利息</h4></div>
+  <div class="tags"><span class="tag r-must">● 必做</span><span class="tag t-rel">可靠 乙</span><span class="tag t-cost">代价 时间少 · 心理中</span></div>
+  <div class="field "><span class="fk">代价</span><div class="fv">需要一次心态切换，一开始会觉得不负责。</div></div><div class="field f-lead"><span class="fk">一句话</span><div class="fv">单位不会因为你在家多想了一小时，就多给你一分。</div></div><div class="field "><span class="fk">怎么做</span><div class="fv">给自己一个下班仪式——出大门、关掉工作群、换掉工装、走一段路。到家后不主动提单位的事。真要复盘，留到周末半小时。</div></div><div class="field f-why"><span class="fk">为什么</span><div class="fv">你把情绪带回家，损耗是双份的：你自己没休息好，家人也跟着难受。而这份损耗没有回报——单位不会记得你在家想过它，只会记得你第二天交了什么。</div></div><div class="field "><span class="fk">失效条件</span><div class="fv">你确实是某件事的责任人，且明天必须交，那该想还得想。但想的是事，不是气。</div></div><div class="field f-case"><span class="fk">翻车</span><div class="fv">有人连续半年在家反复想一件单位的烂事，觉也睡不好。半年后那件事自己解决了，没人再提起。</div></div><div class="field "><span class="fk">可靠度</span><div class="fv">乙</div></div><div class="field "><span class="fk">备注</span><div class="fv">这一条是整卷的出口：前面算的所有时间，最后都要落到“回家后你是不是真的下班了”。</div></div>
+</article><div class="outro"><h3 class="sec">本节小结</h3><p>十二条，合起来只有一个原则：<strong>在单位，做一个不讨厌、但也不拼命的人。</strong></p><p>不讨厌，是因为你把分内事干完了，没人找得到你的茬。不拼命，是因为你算清了这笔账——编制给你的是八小时的工资，你给它八小时的活，剩下的都归你自己。</p><p>水喝够，午觉睡好，下班回家，天经地义。</p><p><strong>下一节讲怎么不被加活，以及怎么拒绝才不伤人。</strong></p></div></section>
+<div class="vol-open" style="border-top:1px solid var(--line);margin-top:40px;padding-top:30px">
+<p class="vol-lead">—— 卷一 完 ——</p></div>
+</div></body></html>
